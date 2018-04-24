@@ -27,6 +27,7 @@ class alignment(object):
         for img_file in self.files:
             try:
                 new_file = os.path.join(os.path.dirname(img_file), 'out', os.path.basename(img_file))
+                os.makedirs(os.path.join(os.path.dirname(img_file), 'out'), exist_ok=True)
                 #print(img_file)
                 img = cv2.imread(img_file)
                 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
